@@ -1,16 +1,14 @@
-# Usar imagem oficial do Python
+# Usa imagem oficial do Python
 FROM python:3.10-slim
 
-# Definir diretório de trabalho
+# Define diretório de trabalho
 WORKDIR /app
 
-# Copiar arquivos
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
-COPY . .
+# Copia os arquivos do projeto
+COPY . /app
 
-# Expor porta
-EXPOSE 5000
+# Instala dependências (se tiver requirements.txt)
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Comando para rodar a aplicação
 CMD ["python", "app.py"]
