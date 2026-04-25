@@ -27,5 +27,5 @@ jobs:
         if: always()
         run: |
           curl -H "Content-Type: application/json" \
-          -d '{"content":"Pipeline executado - Testes passaram na PR com alerta Discord"}' \
+          -d '{"content":"Pipeline executado - Testes passaram na PR com alerta Discord!!"}' \
           ${{ secrets.DISCORD_WEBHOOK }}
